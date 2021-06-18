@@ -9,16 +9,20 @@ client.on("message", (message) => {
 
     var content = message.content.split(" ");
 
-    var finalMessage;
+    try {
+        var test = DateTime.fromISO(`${content[1]}T${content[2]}`, { zone: "pst" });
+        var indianZone = test.setZone("UTC+5:30");
+        var torontoZone = test.setZone("UTC-4:00");
 
-    var indianTime = DateTime.fromISO(`${content[1]}-07:00`);
-    indianTime = `Indian Time: **${indianTime.toLocaleString(
-        DateTime.DATETIME_FULL
-    )}**\n\n Hello World`;
+        var indianTime = `${indianZone.toFormat("ccc', ' FF")}`;
+        var torontoTime = `${torontoZone.toFormat("ccc ', ' FF")}`;
 
-    message.channel.send(indianTime);
+        var finalTime = `Eastern Standard Time: **${torontoTime}**\n\nIndian Time: **${indianTime}**\n\n`;
 
-    //console.log(message);
+        message.channel.send(finalTime);
+    } catch (e) {
+        console.error(e.message);
+    }
 });
 
 client.login(token);

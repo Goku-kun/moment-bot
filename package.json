@@ -1,28 +1,28 @@
 {
-  "name": "moment-bot",
-  "version": "0.0.1",
-  "description": "A discord bot to for sending time in different timezones",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Goku-kun/moment-bot.git"
-  },
-  "keywords": [
-    "bot",
-    "discord",
-    "nodejs"
-  ],
-  "author": "Dharmarajsinh Jethva",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Goku-kun/moment-bot/issues"
-  },
-  "homepage": "https://github.com/Goku-kun/moment-bot#readme",
-  "dependencies": {
-    "discord.js": "^12.5.3",
-    "luxon": "^1.27.0"
-  }
+    "name": "moment-bot",
+    "version": "0.0.1",
+    "description": "A discord bot to for sending time in different timezones",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Goku-kun/moment-bot.git"
+    },
+    "keywords": [
+        "bot",
+        "discord",
+        "nodejs"
+    ],
+    "author": "Dharmarajsinh Jethva",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/Goku-kun/moment-bot/issues"
+    },
+    "homepage": "https://github.com/Goku-kun/moment-bot#readme",
+    "dependencies": {
+        "discord.js": "^12.5.3",
+        "luxon": "^1.27.0"
+    }
 }
