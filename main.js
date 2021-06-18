@@ -2,7 +2,8 @@
 var { DateTime } = require("luxon");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { prefix, token } = require("./config.json");
+//const { prefix, token } = require("./config.json");
+const { prefix, token } = process.env;
 
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix)) return;
