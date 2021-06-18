@@ -12,9 +12,9 @@ client.on("message", (message) => {
 
     try {
         console.log(content);
-        var test = DateTime.fromISO(`${content[1]}T${content[2]}`, { zone: "pst" });
+        var test = DateTime.fromISO(`${content[1]}T${content[2]}`);
         console.log(test);
-        console.log(DateTime.fromISO(`${content[1]}T${content[2]}+12:30`));
+        console.log(DateTime.fromISO(`${content[1]}T${content[2]}+12:30`).toString());
         var indianZone = test.setZone("UTC+5:30");
         var torontoZone = test.setZone("UTC-4:00");
 
