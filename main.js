@@ -1,12 +1,12 @@
 "use strict";
+require("dotenv").config();
 var { DateTime } = require("luxon");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-//const { prefix, token } = require("./config.json");
-const { prefix, token } = process.env;
+const { PREFIX, TOKEN } = process.env;
 
 client.on("message", (message) => {
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(PREFIX)) return;
 
     var content = message.content.split(" ");
 
@@ -26,4 +26,4 @@ client.on("message", (message) => {
     }
 });
 
-client.login(token);
+client.login(TOKEN);
