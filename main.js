@@ -16,7 +16,12 @@ client.on("message", (message) => {
         var torontoTime = `${pstTime.plus({ hours: 3 }).toFormat("ccc', ' FF")}`;
         var finalTime = `Eastern Standard Time: **${torontoTime}**\n\nIndian Time: **${indianTime}**\n\n`;
 
-        message.channel.send(finalTime);
+        const newEmbed = new Discord.MessageEmbed()
+            .setTitle("Respective Times for EST & IST")
+            .setColor("0xff0000")
+            .setDescription(finalTime);
+
+        message.channel.send(newEmbed);
     } catch (e) {
         console.error(e.message);
     }
