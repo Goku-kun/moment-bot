@@ -11,16 +11,9 @@ client.on("message", (message) => {
     var content = message.content.split(" ");
 
     try {
-        console.log(content);
-        var test = DateTime.fromISO(`${content[1]}T${content[2]}`);
-        console.log(test);
-        console.log(DateTime.fromISO(`${content[1]}T${content[2]}+12:30`).toString());
-        var indianZone = test.setZone("UTC+5:30");
-        var torontoZone = test.setZone("UTC-4:00");
-
-        var indianTime = `${indianZone.toFormat("ccc', ' FF")}`;
-        var torontoTime = `${torontoZone.toFormat("ccc ', ' FF")}`;
-
+        var pstTime = DateTime.fromISO(`${content[1]}T${content[2]}`);
+        var indianTime = `${pstTime.plus({ hours: 12, minutes: 30 }).toFormat("ccc', ' FF")}`;
+        var torontoTime = `${pstTime.plus({ hours: 3 }).toFormat("ccc', ' FF")}`;
         var finalTime = `Eastern Standard Time: **${torontoTime}**\n\nIndian Time: **${indianTime}**\n\n`;
 
         message.channel.send(finalTime);
